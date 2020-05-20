@@ -1,0 +1,26 @@
+package com.citic.datacenter.dao.demo;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+import YyBean;
+
+@Repository
+public class YyDaoImpl implements YyDao {
+
+	@Resource
+	private JdbcTemplate jdbcTemplate;
+	
+	public List<YyBean> findAll() {
+		
+		String sql = "select * from YY";
+		RowMapper<YyBean> rowMapper = new BeanPropertyRowMapper<>(YyBean.class);
+		return (List<YyBean>) jdbcTemplate.query(sql, rowMapper);
+	}
+}

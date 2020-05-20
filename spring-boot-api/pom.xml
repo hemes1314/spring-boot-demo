@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.wubin</groupId>
+		<artifactId>spring-boot-demo</artifactId>
+		<version>0.1</version>
+	</parent>
+
+	<artifactId>spring-boot-api</artifactId>
+	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<artifactId>spring-boot-common</artifactId>
+			<groupId>com.wubin</groupId>
+			<version>0.1</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-boot-service</artifactId>
+			<groupId>com.wubin</groupId>
+			<version>0.1</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-boot-serviceimpl</artifactId>
+			<groupId>com.wubin</groupId>
+			<version>0.1</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-boot-model</artifactId>
+			<groupId>com.wubin</groupId>
+			<version>0.1</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-boot-dao</artifactId>
+			<groupId>com.wubin</groupId>
+			<version>0.1</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.citic.datacenter.DatacenterApplication</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
